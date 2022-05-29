@@ -1,3 +1,5 @@
 {
-  "hello": "Hello world"
+  "sWelcomeTitle": "Bienvenido\n a Rick and Morty",
+  "sWelcomeMessage": "En esta prueba, evaluaremos su capacidad para construir la aplicacion mediante el análisis de código\\n y la reproducción del siguiente diseño.",
+  "sWelcomeContinue": "Continuar"
 }

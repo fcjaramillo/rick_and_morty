@@ -50,11 +50,31 @@ class I18n {
     return Localizations.of<I18n>(context, I18n);
   }
 
-  /// `Hola mundo`
-  String get hello {
+  /// `Welcome to\n Rick and Morty`
+  String get sWelcomeTitle {
     return Intl.message(
-      'Hola mundo',
-      name: 'hello',
+      'Welcome to\n Rick and Morty',
+      name: 'sWelcomeTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `In this test, we will evaluate your\nability to build the application\nby analyzing code\nand reproducing the following layout.`
+  String get sWelcomeMessage {
+    return Intl.message(
+      'In this test, we will evaluate your\nability to build the application\nby analyzing code\nand reproducing the following layout.',
+      name: 'sWelcomeMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Continue`
+  String get sWelcomeContinue {
+    return Intl.message(
+      'Continue',
+      name: 'sWelcomeContinue',
       desc: '',
       args: [],
     );
