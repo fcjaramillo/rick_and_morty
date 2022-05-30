@@ -1,16 +1,30 @@
-# rick_and_morty
+# RICK AND MORTY
 
-App the Rick and Morty
+LinkedIn [@Fabian_Camilo_Jaramillo_Ortiz](https://www.linkedin.com/in/fcjaramillo/)
 
-## Getting Started
+## Clean Architecture Con Patron Bloc
 
-This project is a starting point for a Flutter application.
+Clean Arquitecture, con buena distribucion de carpetas
 
-A few resources to get you started if this is your first Flutter project:
+## Manejo de Estado
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Cubit
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## API
+Se utilizo la api ofrecida para el desarrollo de la prueba.
+
+## Inyeccion de dependencias
+
+Las dependencias en este proyecto se manejan con riverpod, para tener un manejo completo de todas las clases del proyecto.
+
+## Base de Datos
+Hive, se peuden almacener los personajes favoritos.
+
+## Testing
+
+Ha nivel de Test se desarrollaron 1 de los 3 niveles existentes: Unit test, por falta de tiempo no se implemento integration tests.
+
+
+# Flutter
+
+# Rick-and-Morty

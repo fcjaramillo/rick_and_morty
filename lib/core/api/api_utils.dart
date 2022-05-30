@@ -46,6 +46,7 @@ class ApiUtils{
     Map<String, dynamic>? headers,
     required Method method,
     String? mockResponseFile,
+    String? mockFile,
     required String path,
     Map<String, dynamic>? queryParameters,
     bool onlyPath = false,
@@ -54,9 +55,33 @@ class ApiUtils{
     String? temporalHost,
   }) async {
     /// Return a mock response if the file is specified
-    if (mockResponseFile?.isNotEmpty ?? false) {
-      final response = await _getMockResponse(mockResponseFile!);
-      return Success(response);
+    if (mockResponseFile != null && mockResponseFile == "1") {
+      final response = await _getMockResponse(mockFile!);
+      return Result.success(response);
+    } else if (mockResponseFile != null && mockResponseFile == "2") {
+      return Result.fail(
+        const BackendError(
+          statusCode: 500,
+          description: 'default',
+          err: 'default',
+        ),
+      );
+    } else if (mockResponseFile != null && mockResponseFile == "3") {
+      return Result.fail(
+        const BackendError(
+          statusCode: 500,
+          description: 'default',
+          err: 'default',
+        ),
+      );
+    }else if (mockResponseFile != null && int.parse(mockResponseFile) < 1 ){
+      return Result.fail(
+        const BackendError(
+          statusCode: 500,
+          description: 'receiveTimeout',
+          err: 'receiveTimeout',
+        ),
+      );
     }
 
     Map<String, dynamic> _headers = <String, dynamic>{};
