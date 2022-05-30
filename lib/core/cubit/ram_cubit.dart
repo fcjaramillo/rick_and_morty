@@ -59,9 +59,10 @@ class RamCubit extends Cubit<RamState> {
                   data.results[i].episodes[0].toString().split('episode')[1],
             );
             if (singleEpisode.isSuccess) {
-              data.results[i].copyWith(
+              final character = data.results[i].copyWith(
                 episode: singleEpisode.successRes,
               );
+              data.results[i] = character;
             }
           }
           characters = [

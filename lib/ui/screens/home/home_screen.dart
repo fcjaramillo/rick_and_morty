@@ -5,8 +5,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:rick_and_morty/core/cubit/ram_cubit.dart';
+import 'package:rick_and_morty/core/dependencies/database_provider.dart';
 import 'package:rick_and_morty/core/entities/character.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
+import 'package:rick_and_morty/ui/screens/home/widgets/favorite_list.dart';
 import 'package:rick_and_morty/ui/screens/home/home_status.dart';
 import 'package:rick_and_morty/ui/screens/home/widgets/default_list.dart';
 import 'package:rick_and_morty/ui/screens/home/widgets/loading_list.dart';
@@ -89,14 +91,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
       }
     });
 
+    Future.delayed(Duration.zero, () async {
+      final cFavorites = await ref.watch(databaseProvider).characters().get();
+
+      ref.read(favoritesCharactersProvider.notifier).update((state) {
+        final fav = cFavorites.map((f) => f.toEntity()).toList();
+        return [...state, ...fav];
+      });
+    });
+
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    /*final globalProvider = Provider.of<GlobalProvider>(context, listen: false);
-    final globalproviderlisten =
-        Provider.of<GlobalProvider>(context, listen: true);*/
     Responsive responsive = Responsive(context);
     return Scaffold(
       body: CustomScrollView(
@@ -197,7 +205,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                           .read(isFavoriteAllProvider.notifier)
                           .update((state) => !state);
                     },
-                    child: CustomStar(
+                    child: RamStar(
                       validate: ref.watch(isFavoriteAllProvider),
                     ),
                   ),
@@ -261,7 +269,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                                             image: list[index].image,
                                             fit: BoxFit.cover,
                                             imageErrorBuilder:
-                                                (context, url, error) => Center(
+                                                (context, url, error) => const Center(
                                               child: CircularProgressIndicator(
                                                 color: kBlueDark,
                                                 backgroundColor: kWhite100,
@@ -274,26 +282,21 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                                           right: kDimens10,
                                           child: GestureDetector(
                                             onTap: () async {
-                                              /*if (globalProvider
-                                                      .keyExist(list[index])) {
-                                                    globalProvider
-                                                        .changeFavoriteDelete(
-                                                            list[index]);
-                                                    setState(() {});
-                                                  } else {
-                                                    globalProvider
-                                                        .changeFavoriteAdd(
-                                                            list[index]);
-                                                    setState(() {});
-                                                  }*/
+                                              ref.read(favoritesCharactersProvider.notifier).update((state) {
+                                                if(state.contains(list[index])){
+                                                  state.remove(list[index]);
+                                                  ref.watch(databaseProvider).characters().delete(character: list[index].toDb());
+                                                  state = [...state];
+                                                } else {
+                                                  ref.watch(databaseProvider).characters().add(character: list[index].toDb());
+                                                  state = [...state, list[index]];
+                                                }
+                                                return state;
+                                              });
                                             },
-                                            child: CustomStar(
+                                            child: RamStar(
                                               color: kWhite100,
-                                              validate: true,
-                                              /*validate:
-                                                globalproviderlisten.keyExist(
-                                              list[index],
-                                            ),*/
+                                              validate: ref.watch(favoritesCharactersProvider).contains(list[index]),
                                             ),
                                           ),
                                         ),
@@ -355,7 +358,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                                           RamText(
                                               colorText: kBlack100,
                                               data: I18n.of(context)
-                                                  .sHomeLastLocation,
+                                                  .sHomeFirstSeen,
                                               fontSize: kDimens12,
                                               fontWeight: FontWeight.w300,
                                               textAlign: TextAlign.left),
@@ -421,7 +424,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen>
                 }
               }),
             ),
-          //if (globalproviderlisten.isFavorite) const FavoritosScreen()
+          if (ref.watch(isFavoriteAllProvider)) const FavoriteList(),
         ],
       ),
     );
