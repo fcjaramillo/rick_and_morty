@@ -25,6 +25,14 @@
   },
   "wFavoriteLost": "You seem lost in your travel",
   "wFavoriteRemoveFilters": "Remove filters",
+  "sDetailEpisode": "Episodes",
+  "sDetailShareCharacter": "Share character",
+  "sDetailShowMore": "Show more",
+  "sDetailShowLess": "Show less",
+  "wInfoInfo": "Information",
+  "wInfoGender": "Gender",
+  "wInfoOrigin": "Origin",
+  "wInfoType": "Type",
   "errorInternet": "Error, Please verify your connection to internet",
   "errorData": "Error"
 }

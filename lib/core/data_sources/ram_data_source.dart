@@ -36,10 +36,10 @@ class RamDataSource {
   }) async {
     Map<String, dynamic> parameters = {};
 
-    if(gender != null && gender != 'all') parameters["gender"] = gender;
-    if(name != null) parameters["name"] = name;
+    if (gender != null && gender != 'all') parameters["gender"] = gender;
+    if (name != null) parameters["name"] = name;
     parameters["page"] = page ?? '1';
-    if(status != null && status != 'all') parameters["status"] = status;
+    if (status != null && status != 'all') parameters["status"] = status;
 
     final result = await _apiUtils.makeRequest(
       method: Method.get,
@@ -74,7 +74,9 @@ class RamDataSource {
     );
     return result.when(
       fail: (fail) => Fail(fail),
-      success: (success) => Success(success),
+      success: (success) => Success(
+        (success as List).map((e) => EpisodeModel.fromJson(e)).toList(),
+      ),
     );
   }
 }

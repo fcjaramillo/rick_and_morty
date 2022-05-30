@@ -34,21 +34,26 @@ class _RamBottomState extends State<RamBottom> {
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(
-          top: widget.top ?? kDimens50, left: widget.left, right: widget.right),
+        top: widget.top ?? kDimens50,
+        left: widget.left,
+        right: widget.right,
+      ),
       child: Container(
+        decoration: BoxDecoration(
+          color: kGreenBlue,
+          borderRadius: BorderRadius.circular(kDimens50),
+        ),
+        height: widget.height ?? kDimens50,
+        width: widget.widht ?? widget.responsive.wp(kDimens80),
         child: Center(
           child: RamText(
-              colorText: kWhite100,
-              data: widget.text,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-              textAlign: TextAlign.center),
+            colorText: kWhite100,
+            data: widget.text,
+            fontSize: kDimens18,
+            fontWeight: FontWeight.w600,
+            textAlign: TextAlign.center,
+          ),
         ),
-        decoration: BoxDecoration(
-            color: kGreenBlue,
-            borderRadius: BorderRadius.circular(kDimens50)),
-        height: widget.height ?? kDimens50,
-        width: widget.widht ?? widget.responsive.wp(80),
       ),
     );
   }
