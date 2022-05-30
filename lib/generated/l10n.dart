@@ -223,6 +223,86 @@ class I18n {
     );
   }
 
+  /// `Episodes`
+  String get sDetailEpisode {
+    return Intl.message(
+      'Episodes',
+      name: 'sDetailEpisode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share character`
+  String get sDetailShareCharacter {
+    return Intl.message(
+      'Share character',
+      name: 'sDetailShareCharacter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show more`
+  String get sDetailShowMore {
+    return Intl.message(
+      'Show more',
+      name: 'sDetailShowMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show less`
+  String get sDetailShowLess {
+    return Intl.message(
+      'Show less',
+      name: 'sDetailShowLess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Information`
+  String get wInfoInfo {
+    return Intl.message(
+      'Information',
+      name: 'wInfoInfo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get wInfoGender {
+    return Intl.message(
+      'Gender',
+      name: 'wInfoGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Origin`
+  String get wInfoOrigin {
+    return Intl.message(
+      'Origin',
+      name: 'wInfoOrigin',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Type`
+  String get wInfoType {
+    return Intl.message(
+      'Type',
+      name: 'wInfoType',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Error, Please verify your connection to internet`
   String get errorInternet {
     return Intl.message(

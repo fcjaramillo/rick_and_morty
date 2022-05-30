@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rick_and_morty/core/cubit/episode_cubit.dart';
 import 'package:rick_and_morty/core/dependencies/database_provider.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
+import 'package:rick_and_morty/ui/screens/detail/detail_screen.dart';
 import 'package:rick_and_morty/ui/screens/home/home_status.dart';
 import 'package:rick_and_morty/ui/utils/constants/constants.dart';
 import 'package:rick_and_morty/ui/utils/responsive.dart';
@@ -29,16 +32,16 @@ class _FavoriteScreenState extends ConsumerState<FavoriteList> {
         (context, index) {
           return GestureDetector(
             onTap: () {
-              /*List allEpisodes = allEpisode(list[index].episodes);
-            context
-                .read<EpisodeCubit>()
-                .getEpisodeForCharacter(episodes: allEpisodes);
-            Navigator.push(
+              List allEpisodes = allEpisode(list[index].episodes);
+              context
+                  .read<EpisodeCubit>()
+                  .getEpisodeForCharacter(episodes: allEpisodes);
+              Navigator.push(
                 context,
-                MaterialPageRoute(
-                    builder: (context) => Detail(
-                          charaterModels: list[index],
-                        )));*/
+                DetailScreen.goto(
+                  character: list[index],
+                ),
+              );
             },
             child: Padding(
               padding: const EdgeInsets.all(kDimens8),

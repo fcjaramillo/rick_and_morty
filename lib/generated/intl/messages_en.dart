@@ -40,6 +40,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "errorData": MessageLookupByLibrary.simpleMessage("Error"),
         "errorInternet": MessageLookupByLibrary.simpleMessage(
             "Error, Please verify your connection to internet"),
+        "sDetailEpisode": MessageLookupByLibrary.simpleMessage("Episodes"),
+        "sDetailShareCharacter":
+            MessageLookupByLibrary.simpleMessage("Share character"),
+        "sDetailShowLess": MessageLookupByLibrary.simpleMessage("Show less"),
+        "sDetailShowMore": MessageLookupByLibrary.simpleMessage("Show more"),
         "sHomeFirstSeen":
             MessageLookupByLibrary.simpleMessage("First seen in:"),
         "sHomeLastLocation":
@@ -65,6 +70,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "wFilterGenderValues": m0,
         "wFilterSearch": MessageLookupByLibrary.simpleMessage("Search"),
         "wFilterStatus": MessageLookupByLibrary.simpleMessage("Choose status"),
-        "wFilterStatusValues": m1
+        "wFilterStatusValues": m1,
+        "wInfoGender": MessageLookupByLibrary.simpleMessage("Gender"),
+        "wInfoInfo": MessageLookupByLibrary.simpleMessage("Information"),
+        "wInfoOrigin": MessageLookupByLibrary.simpleMessage("Origin"),
+        "wInfoType": MessageLookupByLibrary.simpleMessage("Type")
       };
 }

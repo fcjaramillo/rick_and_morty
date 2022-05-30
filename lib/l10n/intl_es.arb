@@ -25,6 +25,14 @@
   },
   "wFavoriteLost": "Pareces perdido en tu viaje",
   "wFavoriteRemoveFilters": "Eliminar filtros",
+  "sDetailEpisode": "Episodios",
+  "sDetailShareCharacter": "Compartir Personaje",
+  "sDetailShowMore": "Ver mas",
+  "sDetailShowLess": "Ver menos",
+  "wInfoInfo": "Informacion",
+  "wInfoGender": "Genero",
+  "wInfoOrigin": "Origen",
+  "wInfoType": "Tipo",
   "errorInternet": "Error, Verifica tu coneccion a internet",
   "errorData": "Error"
 }

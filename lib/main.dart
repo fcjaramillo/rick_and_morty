@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rick_and_morty/core/cubit/episode_cubit.dart';
 import 'package:rick_and_morty/core/cubit/ram_cubit.dart';
 import 'package:rick_and_morty/core/dependencies/database_provider.dart';
 import 'package:rick_and_morty/core/dependencies/ram_providers.dart';
@@ -37,6 +38,13 @@ class MyApp extends ConsumerWidget {
       providers: [
         BlocProvider(
           create: (context) => RamCubit(
+            ramRepository: ref.watch(
+              ramRepositoryProvider,
+            ),
+          ),
+        ),
+        BlocProvider(
+          create: (context) => EpisodeCubit(
             ramRepository: ref.watch(
               ramRepositoryProvider,
             ),
