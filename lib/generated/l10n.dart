@@ -203,6 +203,26 @@ class I18n {
     );
   }
 
+  /// `You seem lost in your travel`
+  String get wFavoriteLost {
+    return Intl.message(
+      'You seem lost in your travel',
+      name: 'wFavoriteLost',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove filters`
+  String get wFavoriteRemoveFilters {
+    return Intl.message(
+      'Remove filters',
+      name: 'wFavoriteRemoveFilters',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Error, Please verify your connection to internet`
   String get errorInternet {
     return Intl.message(

@@ -23,6 +23,8 @@
       "status": {}
     }
   },
+  "wFavoriteLost": "You seem lost in your travel",
+  "wFavoriteRemoveFilters": "Remove filters",
   "errorInternet": "Error, Please verify your connection to internet",
   "errorData": "Error"
 }

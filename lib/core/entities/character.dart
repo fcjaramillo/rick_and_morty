@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:rick_and_morty/core/database/models/character_db.dart';
 import 'package:rick_and_morty/core/entities/episode.dart';
 
 class Character extends Equatable {
@@ -49,6 +50,26 @@ class Character extends Equatable {
       url: url,
     );
   }
+
+  CharacterDb toDb() => CharacterDb(
+    created: created,
+    episodes: episodes.map((e) => e.toString()).toList(),
+    gender: gender,
+    id: id,
+    image: image,
+    location: location,
+    origin: origin,
+    name: name,
+    species: species,
+    status: status,
+    type: type,
+    url: url,
+    firstEpisodeDate: firstEpisode.date,
+    firstEpisodeEpisode: firstEpisode.episode,
+    firstEpisodeId: firstEpisode.id,
+    firstEpisodeName: firstEpisode.name,
+    firstEpisodeUrl: firstEpisode.url,
+  );
 
   @override
   List<Object?> get props => [

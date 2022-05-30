@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rick_and_morty/core/cubit/ram_cubit.dart';
+import 'package:rick_and_morty/core/dependencies/database_provider.dart';
 import 'package:rick_and_morty/core/dependencies/ram_providers.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
 import 'package:rick_and_morty/ui/screens/welcome/welcome_screen.dart';
@@ -30,6 +31,8 @@ class MyApp extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(databaseProvider).initDB();
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(

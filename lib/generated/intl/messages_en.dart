@@ -56,6 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "In this test, we will evaluate your\nability to build the application\nby analyzing code\nand reproducing the following layout."),
         "sWelcomeTitle":
             MessageLookupByLibrary.simpleMessage("Welcome to\n Rick and Morty"),
+        "wFavoriteLost": MessageLookupByLibrary.simpleMessage(
+            "You seem lost in your travel"),
+        "wFavoriteRemoveFilters":
+            MessageLookupByLibrary.simpleMessage("Remove filters"),
         "wFilterGender":
             MessageLookupByLibrary.simpleMessage("Choose the gender"),
         "wFilterGenderValues": m0,

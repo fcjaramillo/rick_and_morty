@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:rick_and_morty/ui/utils/constants/constants.dart';
 
-class CustomStar extends StatefulWidget {
-  const CustomStar({Key? key, required this.validate, this.color})
+class RamStar extends StatefulWidget {
+  const RamStar({Key? key, required this.validate, this.color})
       : super(key: key);
 
   final bool validate;
   final Color? color;
 
   @override
-  State<CustomStar> createState() => _CustomStarState();
+  State<RamStar> createState() => _RamStarState();
 }
 
-class _CustomStarState extends State<CustomStar> {
+class _RamStarState extends State<RamStar> {
   @override
   Widget build(BuildContext context) {
     return Container(

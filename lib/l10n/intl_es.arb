@@ -23,6 +23,8 @@
       "status": {}
     }
   },
+  "wFavoriteLost": "Pareces perdido en tu viaje",
+  "wFavoriteRemoveFilters": "Eliminar filtros",
   "errorInternet": "Error, Verifica tu coneccion a internet",
   "errorData": "Error"
 }
