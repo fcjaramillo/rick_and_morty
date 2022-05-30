@@ -37,7 +37,8 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "errorData": MessageLookupByLibrary.simpleMessage("Error"),
+        "errorData": MessageLookupByLibrary.simpleMessage(
+            "Error, it is not possible to bring the information"),
         "errorInternet": MessageLookupByLibrary.simpleMessage(
             "Error, Verifica tu coneccion a internet"),
         "sDetailEpisode": MessageLookupByLibrary.simpleMessage("Episodios"),
