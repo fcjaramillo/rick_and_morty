@@ -1,5 +1,28 @@
 {
   "sWelcomeTitle": "Welcome to\n Rick and Morty",
   "sWelcomeMessage": "In this test, we will evaluate your\nability to build the application\nby analyzing code\nand reproducing the following layout.",
-  "sWelcomeContinue": "Continue"
+  "sWelcomeContinue": "Continue",
+  "sHomeLoadData": "Load data...",
+  "sHomeSearch": "Search character...",
+  "sHomeShowFavorites": "Show favorites: ",
+  "sHomeLastLocation": "Last know location:",
+  "sHomeFirstSeen": "First seen in:",
+  "sHomeNotAvailable": "Not available",
+  "wFilterGender": "Choose the gender",
+  "wFilterStatus": "Choose status",
+  "wFilterSearch": "Search",
+  "wFilterGenderValues": "{gender, select, all{All} unknown{Unknown} female{Female} male{Male} genderless{Genderless}}",
+  "@wFilterGenderValues": {
+    "placeholders": {
+      "gender": {}
+    }
+  },
+  "wFilterStatusValues": "{status, select, all{All} alive{Alive} unknown{Unknown} dead{Dead}}",
+  "@wFilterStatusValues": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "errorInternet": "Error, Please verify your connection to internet",
+  "errorData": "Error"
 }

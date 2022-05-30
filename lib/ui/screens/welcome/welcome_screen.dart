@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:rick_and_morty/core/cubit/ram_cubit.dart';
 import 'package:rick_and_morty/generated/l10n.dart';
+import 'package:rick_and_morty/ui/screens/home/home_screen.dart';
 import 'package:rick_and_morty/ui/utils/constants/constants.dart';
 import 'package:rick_and_morty/ui/utils/responsive.dart';
 import 'package:rick_and_morty/ui/widgets/ram_brackground.dart';
@@ -69,7 +72,10 @@ class WelcomeScreen extends StatelessWidget {
                     height: responsive.hp(kDimens20),
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      context.read<RamCubit>().getAllCharacter(null);
+                      Navigator.push(context, HomeScreen.goto());
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                           color: kGreenBlue,
