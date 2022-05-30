@@ -79,6 +79,149 @@ class I18n {
       args: [],
     );
   }
+
+  /// `Load data...`
+  String get sHomeLoadData {
+    return Intl.message(
+      'Load data...',
+      name: 'sHomeLoadData',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search character...`
+  String get sHomeSearch {
+    return Intl.message(
+      'Search character...',
+      name: 'sHomeSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show favorites: `
+  String get sHomeShowFavorites {
+    return Intl.message(
+      'Show favorites: ',
+      name: 'sHomeShowFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last know location:`
+  String get sHomeLastLocation {
+    return Intl.message(
+      'Last know location:',
+      name: 'sHomeLastLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First seen in:`
+  String get sHomeFirstSeen {
+    return Intl.message(
+      'First seen in:',
+      name: 'sHomeFirstSeen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not available`
+  String get sHomeNotAvailable {
+    return Intl.message(
+      'Not available',
+      name: 'sHomeNotAvailable',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose the gender`
+  String get wFilterGender {
+    return Intl.message(
+      'Choose the gender',
+      name: 'wFilterGender',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Choose status`
+  String get wFilterStatus {
+    return Intl.message(
+      'Choose status',
+      name: 'wFilterStatus',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get wFilterSearch {
+    return Intl.message(
+      'Search',
+      name: 'wFilterSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `{gender, select, all{All} unknown{Unknown} female{Female} male{Male} genderless{Genderless}}`
+  String wFilterGenderValues(Object gender) {
+    return Intl.select(
+      gender,
+      {
+        'all': 'All',
+        'unknown': 'Unknown',
+        'female': 'Female',
+        'male': 'Male',
+        'genderless': 'Genderless',
+      },
+      name: 'wFilterGenderValues',
+      desc: '',
+      args: [gender],
+    );
+  }
+
+  /// `{status, select, all{All} alive{Alive} unknown{Unknown} dead{Dead}}`
+  String wFilterStatusValues(Object status) {
+    return Intl.select(
+      status,
+      {
+        'all': 'All',
+        'alive': 'Alive',
+        'unknown': 'Unknown',
+        'dead': 'Dead',
+      },
+      name: 'wFilterStatusValues',
+      desc: '',
+      args: [status],
+    );
+  }
+
+  /// `Error, Please verify your connection to internet`
+  String get errorInternet {
+    return Intl.message(
+      'Error, Please verify your connection to internet',
+      name: 'errorInternet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Error`
+  String get errorData {
+    return Intl.message(
+      'Error',
+      name: 'errorData',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I18n> {

@@ -20,12 +20,49 @@ typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'es';
 
+  static String m0(gender) => "${Intl.select(gender, {
+            'all': 'Todos',
+            'unknown': 'Desconocido',
+            'female': 'Mujeres',
+            'male': 'Hombres',
+            'genderless': 'Sin genero',
+          })}";
+
+  static String m1(status) => "${Intl.select(status, {
+            'all': 'Todos',
+            'alive': 'Vivo',
+            'unknown': 'Desconocido',
+            'dead': 'Muerto',
+          })}";
+
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "errorData": MessageLookupByLibrary.simpleMessage("Error"),
+        "errorInternet": MessageLookupByLibrary.simpleMessage(
+            "Error, Verifica tu coneccion a internet"),
+        "sHomeFirstSeen":
+            MessageLookupByLibrary.simpleMessage("Visto primera vez:"),
+        "sHomeLastLocation": MessageLookupByLibrary.simpleMessage(
+            "Ultima localizacion conocida:"),
+        "sHomeLoadData":
+            MessageLookupByLibrary.simpleMessage("Cargando data..."),
+        "sHomeNotAvailable":
+            MessageLookupByLibrary.simpleMessage("No disponible"),
+        "sHomeSearch":
+            MessageLookupByLibrary.simpleMessage("Buscar personaje..."),
+        "sHomeShowFavorites":
+            MessageLookupByLibrary.simpleMessage("Mostrar favoritos: "),
         "sWelcomeContinue": MessageLookupByLibrary.simpleMessage("Continuar"),
         "sWelcomeMessage": MessageLookupByLibrary.simpleMessage(
             "En esta prueba, evaluaremos su capacidad para construir la aplicacion mediante el análisis de código\\n y la reproducción del siguiente diseño."),
         "sWelcomeTitle": MessageLookupByLibrary.simpleMessage(
-            "Bienvenido\n a Rick and Morty")
+            "Bienvenido\n a Rick and Morty"),
+        "wFilterGender":
+            MessageLookupByLibrary.simpleMessage("Elige el genero"),
+        "wFilterGenderValues": m0,
+        "wFilterSearch": MessageLookupByLibrary.simpleMessage("Buscar"),
+        "wFilterStatus":
+            MessageLookupByLibrary.simpleMessage("Elige el status"),
+        "wFilterStatusValues": m1
       };
 }

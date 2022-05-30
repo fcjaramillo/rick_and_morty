@@ -1,5 +1,28 @@
 {
   "sWelcomeTitle": "Bienvenido\n a Rick and Morty",
   "sWelcomeMessage": "En esta prueba, evaluaremos su capacidad para construir la aplicacion mediante el análisis de código\\n y la reproducción del siguiente diseño.",
-  "sWelcomeContinue": "Continuar"
+  "sWelcomeContinue": "Continuar",
+  "sHomeLoadData": "Cargando data...",
+  "sHomeSearch": "Buscar personaje...",
+  "sHomeShowFavorites": "Mostrar favoritos: ",
+  "sHomeLastLocation": "Ultima localizacion conocida:",
+  "sHomeFirstSeen": "Visto primera vez:",
+  "sHomeNotAvailable": "No disponible",
+  "wFilterGender": "Elige el genero",
+  "wFilterStatus": "Elige el status",
+  "wFilterSearch": "Buscar",
+  "wFilterGenderValues": "{gender, select, all{Todos} unknown{Desconocido} female{Mujeres} male{Hombres} genderless{Sin genero}}",
+  "@wFilterGenderValues": {
+    "placeholders": {
+      "gender": {}
+    }
+  },
+  "wFilterStatusValues": "{status, select, all{Todos} alive{Vivo} unknown{Desconocido} dead{Muerto}}",
+  "@wFilterStatusValues": {
+    "placeholders": {
+      "status": {}
+    }
+  },
+  "errorInternet": "Error, Verifica tu coneccion a internet",
+  "errorData": "Error"
 }
