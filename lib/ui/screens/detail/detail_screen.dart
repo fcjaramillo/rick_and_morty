@@ -370,8 +370,6 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
             SliverToBoxAdapter(
               child: GestureDetector(
                 onTap: (){
-                  print(widget.character.url);
-                  print(widget.character);
                   Share.share(widget.character.url);
                 },
                 child: RamBottom(

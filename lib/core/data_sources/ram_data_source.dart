@@ -22,6 +22,7 @@ class RamDataSource {
         "page": page.toString(),
       },
     );
+    print('a');
     return result.when(
       fail: (fail) => Fail(fail),
       success: (success) => Success(PaginationModel.fromJson(success)),
